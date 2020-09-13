@@ -79,6 +79,10 @@
 		A1BE4E9F250CD91300608EDC /* clean-architecture-sample */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE4EC5250E682D00608EDC /* Common */,
+				A1BE4EC4250E682300608EDC /* Data */,
+				A1BE4EC3250E681B00608EDC /* Domain */,
+				A1BE4EC2250E67BD00608EDC /* Presentation */,
 				A1BE4EA0250CD91300608EDC /* AppDelegate.swift */,
 				A1BE4EA2250CD91300608EDC /* SceneDelegate.swift */,
 				A1BE4EA4250CD91300608EDC /* ContentView.swift */,
@@ -105,6 +109,154 @@
 				A1BE4EB9250CD91500608EDC /* Info.plist */,
 			);
 			path = "clean-architecture-sampleUITests";
+			sourceTree = "<group>";
+		};
+		A1BE4EC2250E67BD00608EDC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4EC8250E684800608EDC /* Presenter */,
+				A1BE4EC7250E684000608EDC /* View */,
+				A1BE4EC6250E683600608EDC /* Controller */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A1BE4EC3250E681B00608EDC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4ECB250E686D00608EDC /* Model */,
+				A1BE4ECA250E686300608EDC /* Repository */,
+				A1BE4EC9250E685900608EDC /* UserCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A1BE4EC4250E682300608EDC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4ECC250E687800608EDC /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A1BE4EC5250E682D00608EDC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4ED5250E691200608EDC /* Log */,
+				A1BE4ED4250E690700608EDC /* DI */,
+				A1BE4ED3250E68EE00608EDC /* Utils */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A1BE4EC6250E683600608EDC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A1BE4EC7250E684000608EDC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A1BE4EC8250E684800608EDC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A1BE4EC9250E685900608EDC /* UserCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserCase;
+			sourceTree = "<group>";
+		};
+		A1BE4ECA250E686300608EDC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A1BE4ECB250E686D00608EDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1BE4ECC250E687800608EDC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4ECF250E68B300608EDC /* Dao */,
+				A1BE4ECE250E68AC00608EDC /* Api */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A1BE4ECE250E68AC00608EDC /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4ED1250E68D200608EDC /* Entity */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		A1BE4ECF250E68B300608EDC /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4ED0250E68C100608EDC /* Realm */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		A1BE4ED0250E68C100608EDC /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4ED2250E68E000608EDC /* Entity */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		A1BE4ED1250E68D200608EDC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A1BE4ED2250E68E000608EDC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A1BE4ED3250E68EE00608EDC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A1BE4ED4250E690700608EDC /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		A1BE4ED5250E691200608EDC /* Log */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
