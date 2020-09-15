@@ -14,6 +14,8 @@
 		A1BE4EAA250CD91500608EDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1BE4EA9250CD91500608EDC /* Preview Assets.xcassets */; };
 		A1BE4EAD250CD91500608EDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1BE4EAB250CD91500608EDC /* LaunchScreen.storyboard */; };
 		A1BE4EB8250CD91500608EDC /* clean_architecture_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EB7250CD91500608EDC /* clean_architecture_sampleUITests.swift */; };
+		A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4ED625110B5300608EDC /* SearchViewController.swift */; };
+		A1BE4EDA251110F700608EDC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4ED9251110F700608EDC /* SnapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		A1BE4EB3250CD91500608EDC /* clean-architecture-sampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clean-architecture-sampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1BE4EB7250CD91500608EDC /* clean_architecture_sampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clean_architecture_sampleUITests.swift; sourceTree = "<group>"; };
 		A1BE4EB9250CD91500608EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1BE4ED625110B5300608EDC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A1BE4ED9251110F700608EDC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BE4EDA251110F700608EDC /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,7 @@
 				A1BE4E9F250CD91300608EDC /* clean-architecture-sample */,
 				A1BE4EB6250CD91500608EDC /* clean-architecture-sampleUITests */,
 				A1BE4E9E250CD91300608EDC /* Products */,
+				A1BE4ED8251110F600608EDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +158,7 @@
 		A1BE4EC6250E683600608EDC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE4ED625110B5300608EDC /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -259,6 +266,14 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
+		A1BE4ED8251110F600608EDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4ED9251110F700608EDC /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,6 +284,7 @@
 				A1BE4E99250CD91300608EDC /* Sources */,
 				A1BE4E9A250CD91300608EDC /* Frameworks */,
 				A1BE4E9B250CD91300608EDC /* Resources */,
+				A1BE4EDB2511113B00608EDC /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -355,6 +371,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A1BE4EDB2511113B00608EDC /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which /usr/local/bin/carthage >/dev/null; then\n    /usr/local/bin/carthage copy-frameworks\nelse\n    echo \"warning: carthage not installed. install at 'brew install carthage'\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A1BE4E99250CD91300608EDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -362,6 +401,7 @@
 			files = (
 				A1BE4EA1250CD91300608EDC /* AppDelegate.swift in Sources */,
 				A1BE4EA3250CD91300608EDC /* SceneDelegate.swift in Sources */,
+				A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */,
 				A1BE4EA5250CD91300608EDC /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +558,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"clean-architecture-sample/Preview Content\"";
 				DEVELOPMENT_TEAM = TBQA5RANYY;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "clean-architecture-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,6 +582,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"clean-architecture-sample/Preview Content\"";
 				DEVELOPMENT_TEAM = TBQA5RANYY;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "clean-architecture-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
