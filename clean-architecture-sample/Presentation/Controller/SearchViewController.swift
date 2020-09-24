@@ -15,6 +15,17 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let mySearchBar = UISearchBar()
+//        mySearchBar.delegate = self　//UISearchBarDelegate
+        mySearchBar.showsCancelButton = true
+        mySearchBar.placeholder = "会社への不満を入力して下さい"
+        self.view.addSubview(mySearchBar)
+                
+        mySearchBar.snp.makeConstraints { make in
+            make.height.equalTo(80.0)
+            make.top.right.left.equalTo(0)
+        }
+        
         self.view.backgroundColor = UIColor.red
     }
     
