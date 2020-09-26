@@ -8,30 +8,50 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
 class SearchViewController: UIViewController {
 
+    let contentStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        return stackView
+    }()
+
+    let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.showsCancelButton = true
+        searchBar.placeholder = "検索ワードを入力してください"
+        return searchBar
+    }()
+    
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.contentInset = UIEdgeInsets.zero
+        tableView.estimatedRowHeight = 30.0
+        tableView.rowHeight = UITableView.automaticDimension
+        return tableView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        let mySearchBar = UISearchBar()
-//        mySearchBar.delegate = self　//UISearchBarDelegate
-        mySearchBar.showsCancelButton = true
-        mySearchBar.placeholder = "会社への不満を入力して下さい"
-        self.view.addSubview(mySearchBar)
-                
-        mySearchBar.snp.makeConstraints { make in
-            make.height.equalTo(80.0)
-            make.top.right.left.equalTo(0)
-        }
         
-        self.view.backgroundColor = UIColor.red
+        self.contentStackView.addArrangedSubview(self.searchBar)
+        self.contentStackView.addArrangedSubview(self.tableView)
+        self.view.addSubview(contentStackView)
+                
+        self.contentStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        self.searchBar.snp.makeConstraints { make in
+            make.height.equalTo(80.0)
+            make.right.left.equalToSuperview()
+        }
+        self.tableView.snp.makeConstraints { make in
+            make.right.left.equalToSuperview()
+        }
     }
     
-
     /*
     // MARK: - Navigation
 

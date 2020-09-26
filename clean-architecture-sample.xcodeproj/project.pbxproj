@@ -17,7 +17,6 @@
 		A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4ED625110B5300608EDC /* SearchViewController.swift */; };
 		A1BE4EDA251110F700608EDC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4ED9251110F700608EDC /* SnapKit.framework */; };
 		A1BE4EDD251F55F700608EDC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4EDC251F55F700608EDC /* RxSwift.framework */; };
-		A1BE4EDF251F563300608EDC /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4EDE251F563300608EDC /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1BE4EDF251F563300608EDC /* RxCocoa.framework in Frameworks */,
 				A1BE4EDD251F55F700608EDC /* RxSwift.framework in Frameworks */,
 				A1BE4EDA251110F700608EDC /* SnapKit.framework in Frameworks */,
 			);
