@@ -16,6 +16,8 @@
 		A1BE4EB8250CD91500608EDC /* clean_architecture_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EB7250CD91500608EDC /* clean_architecture_sampleUITests.swift */; };
 		A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4ED625110B5300608EDC /* SearchViewController.swift */; };
 		A1BE4EDA251110F700608EDC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4ED9251110F700608EDC /* SnapKit.framework */; };
+		A1BE4EDD251F55F700608EDC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4EDC251F55F700608EDC /* RxSwift.framework */; };
+		A1BE4EDF251F563300608EDC /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4EDE251F563300608EDC /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		A1BE4EB9250CD91500608EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1BE4ED625110B5300608EDC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A1BE4ED9251110F700608EDC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		A1BE4EDC251F55F700608EDC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		A1BE4EDE251F563300608EDC /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BE4EDF251F563300608EDC /* RxCocoa.framework in Frameworks */,
+				A1BE4EDD251F55F700608EDC /* RxSwift.framework in Frameworks */,
 				A1BE4EDA251110F700608EDC /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +275,8 @@
 		A1BE4ED8251110F600608EDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE4EDE251F563300608EDC /* RxCocoa.framework */,
+				A1BE4EDC251F55F700608EDC /* RxSwift.framework */,
 				A1BE4ED9251110F700608EDC /* SnapKit.framework */,
 			);
 			name = Frameworks;
@@ -381,12 +389,16 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
