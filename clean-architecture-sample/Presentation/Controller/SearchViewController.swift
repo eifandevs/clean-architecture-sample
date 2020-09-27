@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
 
@@ -33,15 +35,32 @@ class SearchViewController: UIViewController {
         return tableView
     }()
 
+    private let presenter: SearchViewPresenterType
+    
+    private let disposeBag = DisposeBag()
+
+    init(presenter: SearchViewPresenterType) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.white
         
         self.contentStackView.addArrangedSubview(self.searchBar)
         self.contentStackView.addArrangedSubview(self.tableView)
         self.view.addSubview(contentStackView)
                 
         self.contentStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            make.right.left.equalToSuperview()
         }
         self.searchBar.snp.makeConstraints { make in
             make.height.equalTo(80.0)
@@ -50,6 +69,8 @@ class SearchViewController: UIViewController {
         self.tableView.snp.makeConstraints { make in
             make.right.left.equalToSuperview()
         }
+        
+        self.presenter.inputs.searchText.accept("bbbbbb")
     }
     
     /*

@@ -17,6 +17,7 @@
 		A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4ED625110B5300608EDC /* SearchViewController.swift */; };
 		A1BE4EDA251110F700608EDC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4ED9251110F700608EDC /* SnapKit.framework */; };
 		A1BE4EDD251F55F700608EDC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4EDC251F55F700608EDC /* RxSwift.framework */; };
+		A1BE4EE125209AD200608EDC /* SearchViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE025209AD200608EDC /* SearchViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		A1BE4ED9251110F700608EDC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		A1BE4EDC251F55F700608EDC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		A1BE4EDE251F563300608EDC /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		A1BE4EE025209AD200608EDC /* SearchViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		A1BE4EC8250E684800608EDC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE4EE025209AD200608EDC /* SearchViewPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BE4EE125209AD200608EDC /* SearchViewPresenter.swift in Sources */,
 				A1BE4EA1250CD91300608EDC /* AppDelegate.swift in Sources */,
 				A1BE4EA3250CD91300608EDC /* SceneDelegate.swift in Sources */,
 				A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */,
