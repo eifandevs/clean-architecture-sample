@@ -23,6 +23,7 @@ class SearchViewController: UIViewController {
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.showsCancelButton = true
+        searchBar.backgroundColor = UIColor.lightGray
         searchBar.placeholder = "検索ワードを入力してください"
         return searchBar
     }()
@@ -51,7 +52,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.lightGray
         
         self.contentStackView.addArrangedSubview(self.searchBar)
         self.contentStackView.addArrangedSubview(self.tableView)
@@ -70,7 +71,23 @@ class SearchViewController: UIViewController {
             make.right.left.equalToSuperview()
         }
         
-        self.presenter.inputs.searchText.accept("bbbbbb")
+        self.searchBar.rx.text
+            .bind(to: self.presenter.inputs.searchText)
+            .disposed(by: disposeBag)
+        
+        self.searchBar.rx.text.orEmpty
+        .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+        .distinctUntilChanged()
+        .flatMap { text -> Observable<String> in
+            guard text.count > 2 else {
+                return .empty()
+            }
+            return .just(text)
+        }.subscribe { e in
+            if let text = e.element {
+//                self.presenter.inputs.searchText.accept(text)
+            }
+        }.disposed(by: disposeBag)
     }
     
     /*
