@@ -18,6 +18,7 @@
 		A1BE4EDA251110F700608EDC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4ED9251110F700608EDC /* SnapKit.framework */; };
 		A1BE4EDD251F55F700608EDC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4EDC251F55F700608EDC /* RxSwift.framework */; };
 		A1BE4EE125209AD200608EDC /* SearchViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE025209AD200608EDC /* SearchViewPresenter.swift */; };
+		A1BE4EE32524A0A700608EDC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE22524A0A700608EDC /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A1BE4EDC251F55F700608EDC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		A1BE4EDE251F563300608EDC /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		A1BE4EE025209AD200608EDC /* SearchViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewPresenter.swift; sourceTree = "<group>"; };
+		A1BE4EE22524A0A700608EDC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		A1BE4EC7250E684000608EDC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE4EE22524A0A700608EDC /* SearchTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				A1BE4EE125209AD200608EDC /* SearchViewPresenter.swift in Sources */,
 				A1BE4EA1250CD91300608EDC /* AppDelegate.swift in Sources */,
 				A1BE4EA3250CD91300608EDC /* SceneDelegate.swift in Sources */,
+				A1BE4EE32524A0A700608EDC /* SearchTableViewCell.swift in Sources */,
 				A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */,
 				A1BE4EA5250CD91300608EDC /* ContentView.swift in Sources */,
 			);

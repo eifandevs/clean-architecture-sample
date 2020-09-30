@@ -75,17 +75,9 @@ class SearchViewController: UIViewController {
             .bind(to: self.presenter.inputs.searchText)
             .disposed(by: disposeBag)
         
-        self.searchBar.rx.text.orEmpty
-        .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
-        .distinctUntilChanged()
-        .flatMap { text -> Observable<String> in
-            guard text.count > 2 else {
-                return .empty()
-            }
-            return .just(text)
-        }.subscribe { e in
-            if let text = e.element {
-//                self.presenter.inputs.searchText.accept(text)
+        self.presenter.outputs.searchResults.subscribe { e in
+            if let items = e.element {
+                print(items)
             }
         }.disposed(by: disposeBag)
     }
