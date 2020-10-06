@@ -54,6 +54,8 @@ class SearchViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.lightGray
         
+        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "cell")
+        
         self.contentStackView.addArrangedSubview(self.searchBar)
         self.contentStackView.addArrangedSubview(self.tableView)
         self.view.addSubview(contentStackView)
@@ -75,11 +77,10 @@ class SearchViewController: UIViewController {
             .bind(to: self.presenter.inputs.searchText)
             .disposed(by: disposeBag)
         
-        self.presenter.outputs.searchResults.subscribe { e in
-            if let items = e.element {
-                print(items)
-            }
-        }.disposed(by: disposeBag)
+        self.presenter.outputs.searchResults.bind(to: tableView.rx.items(cellIdentifier: "cell")) { _, item, cell in
+            cell.textLabel?.text = item.name
+        }
+        .disposed(by: disposeBag)
     }
     
     /*
