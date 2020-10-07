@@ -19,6 +19,7 @@
 		A1BE4EDD251F55F700608EDC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4EDC251F55F700608EDC /* RxSwift.framework */; };
 		A1BE4EE125209AD200608EDC /* SearchViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE025209AD200608EDC /* SearchViewPresenter.swift */; };
 		A1BE4EE32524A0A700608EDC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE22524A0A700608EDC /* SearchTableViewCell.swift */; };
+		A1BE4EE5252DC4A200608EDC /* GithubUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE4252DC4A200608EDC /* GithubUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A1BE4EDE251F563300608EDC /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		A1BE4EE025209AD200608EDC /* SearchViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewPresenter.swift; sourceTree = "<group>"; };
 		A1BE4EE22524A0A700608EDC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		A1BE4EE4252DC4A200608EDC /* GithubUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		A1BE4EC9250E685900608EDC /* UserCase */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE4EE4252DC4A200608EDC /* GithubUseCase.swift */,
 			);
 			path = UserCase;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				A1BE4EE32524A0A700608EDC /* SearchTableViewCell.swift in Sources */,
 				A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */,
 				A1BE4EA5250CD91300608EDC /* ContentView.swift in Sources */,
+				A1BE4EE5252DC4A200608EDC /* GithubUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
