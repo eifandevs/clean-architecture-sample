@@ -36,11 +36,12 @@ class SearchViewController: UIViewController {
         return tableView
     }()
 
-    private let presenter: SearchViewPresenterType
+    private let presenter: SearchViewPresenter
     
     private let disposeBag = DisposeBag()
 
-    init(presenter: SearchViewPresenterType) {
+    init(presenter: SearchViewPresenter) {
+        // inject
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }

@@ -19,16 +19,15 @@ protocol SearchViewPresenterOutputs: AnyObject {
 
 }
 
-protocol SearchViewPresenterType: AnyObject {
+protocol SearchViewPresenter: AnyObject {
     var inputs: SearchViewPresenterInputs { get }
     var outputs: SearchViewPresenterOutputs { get }
 }
 
-final class SearchViewPresenter: SearchViewPresenterType, SearchViewPresenterInputs, SearchViewPresenterOutputs {
+final class SearchViewPresenterImpl: SearchViewPresenter, SearchViewPresenterInputs, SearchViewPresenterOutputs {
     /// Type
     var inputs: SearchViewPresenterInputs { return self }
     var outputs: SearchViewPresenterOutputs { return self }
-
     
     /// Input
     let searchText: AnyObserver<String?>
@@ -36,9 +35,15 @@ final class SearchViewPresenter: SearchViewPresenterType, SearchViewPresenterInp
     /// Output
     let searchResults: Observable<[GithubRepoItem]>
 
+    /// UseCase
+    let searchUseCase: SearchUseCase
+    
     private let disposeBag = DisposeBag()
     
-    init() {
+    init(usecase: SearchUseCase) {
+        // inject
+        searchUseCase = usecase
+        
         let _searchText = PublishRelay<String?>()
         self.searchText = AnyObserver<String?>() { event in
             guard let text = event.element else {
@@ -65,7 +70,7 @@ final class SearchViewPresenter: SearchViewPresenterType, SearchViewPresenterInp
         do {
             let searchResult = searchWithText
                 .flatMap { text -> Observable<Event<[GithubRepoItem]>> in
-                    self.sendRequest(text: text)
+                    self.searchUseCase.search(text: text)
                         .map { $0.items }
                         .materialize()
                 }.share()
@@ -84,24 +89,24 @@ final class SearchViewPresenter: SearchViewPresenterType, SearchViewPresenterInp
         }
     }
     
-    func sendRequest(text: String) -> Observable<GithubRepoInfo> {
-        return Observable.create { observer -> Disposable in
-            let githubRepoInfo = GithubRepoInfo(count: 2, items: ["aaa", "bbb"].map{ GithubRepoItem(name: $0)})
-            observer.onNext(githubRepoInfo)
-            observer.onCompleted()
-            
-            return Disposables.create()
-        }
-    }
-    
-    func sendRequestWithError(text: String) -> Observable<GithubRepoInfo> {
-        return Observable.create { observer -> Disposable in
-            let error = NSError(domain: "", code: 1, userInfo: nil)
-            observer.onError(error)
-            
-            return Disposables.create()
-        }
-    }
+//    func sendRequest(text: String) -> Observable<GithubRepoInfo> {
+//        return Observable.create { observer -> Disposable in
+//            let githubRepoInfo = GithubRepoInfo(count: 2, items: ["aaa", "bbb"].map{ GithubRepoItem(name: $0)})
+//            observer.onNext(githubRepoInfo)
+//            observer.onCompleted()
+//
+//            return Disposables.create()
+//        }
+//    }
+//
+//    func sendRequestWithError(text: String) -> Observable<GithubRepoInfo> {
+//        return Observable.create { observer -> Disposable in
+//            let error = NSError(domain: "", code: 1, userInfo: nil)
+//            observer.onError(error)
+//
+//            return Disposables.create()
+//        }
+//    }
 }
 
 

@@ -14,12 +14,17 @@
 		A1BE4EAA250CD91500608EDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1BE4EA9250CD91500608EDC /* Preview Assets.xcassets */; };
 		A1BE4EAD250CD91500608EDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1BE4EAB250CD91500608EDC /* LaunchScreen.storyboard */; };
 		A1BE4EB8250CD91500608EDC /* clean_architecture_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EB7250CD91500608EDC /* clean_architecture_sampleUITests.swift */; };
-		A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4ED625110B5300608EDC /* SearchViewController.swift */; };
 		A1BE4EDA251110F700608EDC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4ED9251110F700608EDC /* SnapKit.framework */; };
 		A1BE4EDD251F55F700608EDC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE4EDC251F55F700608EDC /* RxSwift.framework */; };
 		A1BE4EE125209AD200608EDC /* SearchViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE025209AD200608EDC /* SearchViewPresenter.swift */; };
 		A1BE4EE32524A0A700608EDC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE22524A0A700608EDC /* SearchTableViewCell.swift */; };
-		A1BE4EE5252DC4A200608EDC /* GithubUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE4252DC4A200608EDC /* GithubUseCase.swift */; };
+		A1BE4EE5252DC4A200608EDC /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4EE4252DC4A200608EDC /* SearchUseCase.swift */; };
+		A1BE4F24253D96D600608EDC /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F23253D96D600608EDC /* ViewControllerBuilder.swift */; };
+		A1BE4F27253D979900608EDC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F26253D979900608EDC /* SearchViewController.swift */; };
+		A1BE4F29253D97AA00608EDC /* SearchViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F28253D97AA00608EDC /* SearchViewControllerBuilder.swift */; };
+		A1BE4F2B253D9C7B00608EDC /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F2A253D9C7B00608EDC /* Translator.swift */; };
+		A1BE4F2D253D9C9F00608EDC /* WireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F2C253D9C9F00608EDC /* WireFrame.swift */; };
+		A1BE4F2F253D9CDC00608EDC /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F2E253D9CDC00608EDC /* GithubRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +49,18 @@
 		A1BE4EB3250CD91500608EDC /* clean-architecture-sampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clean-architecture-sampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1BE4EB7250CD91500608EDC /* clean_architecture_sampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clean_architecture_sampleUITests.swift; sourceTree = "<group>"; };
 		A1BE4EB9250CD91500608EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1BE4ED625110B5300608EDC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A1BE4ED9251110F700608EDC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		A1BE4EDC251F55F700608EDC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		A1BE4EDE251F563300608EDC /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		A1BE4EE025209AD200608EDC /* SearchViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewPresenter.swift; sourceTree = "<group>"; };
 		A1BE4EE22524A0A700608EDC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
-		A1BE4EE4252DC4A200608EDC /* GithubUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUseCase.swift; sourceTree = "<group>"; };
+		A1BE4EE4252DC4A200608EDC /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
+		A1BE4F23253D96D600608EDC /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
+		A1BE4F26253D979900608EDC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Builder/SearchViewController.swift; sourceTree = "<group>"; };
+		A1BE4F28253D97AA00608EDC /* SearchViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerBuilder.swift; sourceTree = "<group>"; };
+		A1BE4F2A253D9C7B00608EDC /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		A1BE4F2C253D9C9F00608EDC /* WireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireFrame.swift; sourceTree = "<group>"; };
+		A1BE4F2E253D9CDC00608EDC /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +178,8 @@
 		A1BE4EC6250E683600608EDC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A1BE4ED625110B5300608EDC /* SearchViewController.swift */,
+				A1BE4F26253D979900608EDC /* SearchViewController.swift */,
+				A1BE4F25253D979900608EDC /* Builder */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,7 +203,7 @@
 		A1BE4EC9250E685900608EDC /* UserCase */ = {
 			isa = PBXGroup;
 			children = (
-				A1BE4EE4252DC4A200608EDC /* GithubUseCase.swift */,
+				A1BE4EE4252DC4A200608EDC /* SearchUseCase.swift */,
 			);
 			path = UserCase;
 			sourceTree = "<group>";
@@ -200,6 +211,7 @@
 		A1BE4ECA250E686300608EDC /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE4F2E253D9CDC00608EDC /* GithubRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -268,6 +280,9 @@
 		A1BE4ED4250E690700608EDC /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE4F23253D96D600608EDC /* ViewControllerBuilder.swift */,
+				A1BE4F2A253D9C7B00608EDC /* Translator.swift */,
+				A1BE4F2C253D9C9F00608EDC /* WireFrame.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -287,6 +302,14 @@
 				A1BE4ED9251110F700608EDC /* SnapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1BE4F25253D979900608EDC /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4F28253D97AA00608EDC /* SearchViewControllerBuilder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,13 +443,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BE4F2F253D9CDC00608EDC /* GithubRepository.swift in Sources */,
 				A1BE4EE125209AD200608EDC /* SearchViewPresenter.swift in Sources */,
 				A1BE4EA1250CD91300608EDC /* AppDelegate.swift in Sources */,
+				A1BE4F2D253D9C9F00608EDC /* WireFrame.swift in Sources */,
+				A1BE4F27253D979900608EDC /* SearchViewController.swift in Sources */,
 				A1BE4EA3250CD91300608EDC /* SceneDelegate.swift in Sources */,
+				A1BE4F29253D97AA00608EDC /* SearchViewControllerBuilder.swift in Sources */,
 				A1BE4EE32524A0A700608EDC /* SearchTableViewCell.swift in Sources */,
-				A1BE4ED725110B5300608EDC /* SearchViewController.swift in Sources */,
+				A1BE4F24253D96D600608EDC /* ViewControllerBuilder.swift in Sources */,
+				A1BE4F2B253D9C7B00608EDC /* Translator.swift in Sources */,
 				A1BE4EA5250CD91300608EDC /* ContentView.swift in Sources */,
-				A1BE4EE5252DC4A200608EDC /* GithubUseCase.swift in Sources */,
+				A1BE4EE5252DC4A200608EDC /* SearchUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
