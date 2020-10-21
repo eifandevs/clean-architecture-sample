@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol SearchUseCase {
-    func search(text: String) -> Observable<GithubRepoInfo>
+    func search(text: String) -> Observable<GithubReposModel>
 }
 
 class SearchUseCaseImpl: SearchUseCase {
@@ -21,8 +21,8 @@ class SearchUseCaseImpl: SearchUseCase {
         self.githubRepository = repository
     }
 
-    func search(text: String) -> Observable<GithubRepoInfo> {
-        return githubRepository.search(text: text)
+    func search(text: String) -> Observable<GithubReposModel> {
+        return githubRepository.search(text: text).map { GithubReposTranslator.translate($0)}
     }
 
 }

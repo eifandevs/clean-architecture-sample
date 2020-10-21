@@ -10,18 +10,18 @@ import Foundation
 import RxSwift
 
 protocol GithubRepository {
-    func search(text: String) -> Observable<GithubRepoInfo>
+    func search(text: String) -> Observable<GithubReposEntity>
 }
 
 class GithubRepositoryImpl: GithubRepository {
     
-    func search(text: String) -> Observable<GithubRepoInfo> {
-        return Observable.create { observer -> Disposable in
-            let githubRepoInfo = GithubRepoInfo(count: 2, items: ["aaa", "bbb"].map{ GithubRepoItem(name: $0)})
-            observer.onNext(githubRepoInfo)
-            observer.onCompleted()
-            
-            return Disposables.create()
-        }
+    let githubRepoDataStore: GithubRepoDataStore
+
+    init(dataStore: GithubRepoDataStore) {
+        self.githubRepoDataStore = dataStore
+    }
+
+    func search(text: String) -> Observable<GithubReposEntity> {
+        return githubRepoDataStore.searchRepo(text: text)
     }
 }

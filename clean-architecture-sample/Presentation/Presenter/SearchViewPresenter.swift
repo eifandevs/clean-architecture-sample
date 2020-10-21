@@ -15,7 +15,7 @@ protocol SearchViewPresenterInputs: AnyObject {
 }
 
 protocol SearchViewPresenterOutputs: AnyObject {
-    var searchResults: Observable<[GithubRepoItem]> { get }
+    var searchResults: Observable<[GithubRepoModel]> { get }
 
 }
 
@@ -33,7 +33,7 @@ final class SearchViewPresenterImpl: SearchViewPresenter, SearchViewPresenterInp
     let searchText: AnyObserver<String?>
 
     /// Output
-    let searchResults: Observable<[GithubRepoItem]>
+    let searchResults: Observable<[GithubRepoModel]>
 
     /// UseCase
     let searchUseCase: SearchUseCase
@@ -64,12 +64,12 @@ final class SearchViewPresenterImpl: SearchViewPresenter, SearchViewPresenterInp
             }
             .share()
         
-        let _searchResults = PublishRelay<[GithubRepoItem]>()
+        let _searchResults = PublishRelay<[GithubRepoModel]>()
         self.searchResults = _searchResults.asObservable()
         
         do {
             let searchResult = searchWithText
-                .flatMap { text -> Observable<Event<[GithubRepoItem]>> in
+                .flatMap { text -> Observable<Event<[GithubRepoModel]>> in
                     self.searchUseCase.search(text: text)
                         .map { $0.items }
                         .materialize()
@@ -89,17 +89,17 @@ final class SearchViewPresenterImpl: SearchViewPresenter, SearchViewPresenterInp
         }
     }
     
-//    func sendRequest(text: String) -> Observable<GithubRepoInfo> {
+//    func sendRequest(text: String) -> Observable<GithubReposModel> {
 //        return Observable.create { observer -> Disposable in
-//            let githubRepoInfo = GithubRepoInfo(count: 2, items: ["aaa", "bbb"].map{ GithubRepoItem(name: $0)})
-//            observer.onNext(githubRepoInfo)
+//            let GithubReposModel = GithubReposModel(count: 2, items: ["aaa", "bbb"].map{ GithubRepoModel(name: $0)})
+//            observer.onNext(GithubReposModel)
 //            observer.onCompleted()
 //
 //            return Disposables.create()
 //        }
 //    }
 //
-//    func sendRequestWithError(text: String) -> Observable<GithubRepoInfo> {
+//    func sendRequestWithError(text: String) -> Observable<GithubReposModel> {
 //        return Observable.create { observer -> Disposable in
 //            let error = NSError(domain: "", code: 1, userInfo: nil)
 //            observer.onError(error)
@@ -109,13 +109,4 @@ final class SearchViewPresenterImpl: SearchViewPresenter, SearchViewPresenterInp
 //    }
 }
 
-
-struct GithubRepoInfo {
-    let count: Int
-    let items: [GithubRepoItem]
-}
-
-struct GithubRepoItem {
-    let name: String
-}
 

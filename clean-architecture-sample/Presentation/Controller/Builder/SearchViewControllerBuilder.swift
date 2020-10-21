@@ -12,12 +12,11 @@ struct SearchViewControllerBuilder: ViewControllerBuilder {
     typealias ViewController = SearchViewController
 
     static func build() -> ViewController {
-        let repository = GithubRepositoryImpl()
+        let dataStore = GithubRepoDataStoreImpl()
+        let repository = GithubRepositoryImpl(dataStore: dataStore)
         let usecase = SearchUseCaseImpl(repository: repository)
         let presenter = SearchViewPresenterImpl(usecase: usecase)
         let viewController = SearchViewController(presenter: presenter)
-//        let dataStore      = GitHubRepositoryDataStoreImpl()
-//        let repository     = GitHubRepositoryRepositoryImpl(dataStore: dataStore)
 
         return viewController
     }
