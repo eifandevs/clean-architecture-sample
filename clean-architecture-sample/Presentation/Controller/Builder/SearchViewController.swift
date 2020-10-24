@@ -38,6 +38,8 @@ class SearchViewController: UIViewController {
 
     private let presenter: SearchViewPresenter
     
+    private var wireFrame: SearchWireframe?
+    
     private let disposeBag = DisposeBag()
 
     init(presenter: SearchViewPresenter) {
@@ -53,6 +55,8 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.wireFrame = SearchWireframe(viewController: self)
+
         self.view.backgroundColor = UIColor.lightGray
         
         tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "cell")

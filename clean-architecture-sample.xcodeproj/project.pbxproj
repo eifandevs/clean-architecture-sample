@@ -29,6 +29,7 @@
 		A1BE4F352540457E00608EDC /* GithubRepoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F342540457E00608EDC /* GithubRepoDataStore.swift */; };
 		A1BE4F37254047C500608EDC /* GithubRepoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F36254047C500608EDC /* GithubRepoEntity.swift */; };
 		A1BE4F3A25404B8000608EDC /* GithubRepoTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F3925404B8000608EDC /* GithubRepoTranslator.swift */; };
+		A1BE4F3D2541A78200608EDC /* SearchWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE4F3C2541A78200608EDC /* SearchWireFrame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		A1BE4F342540457E00608EDC /* GithubRepoDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoDataStore.swift; sourceTree = "<group>"; };
 		A1BE4F36254047C500608EDC /* GithubRepoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoEntity.swift; sourceTree = "<group>"; };
 		A1BE4F3925404B8000608EDC /* GithubRepoTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoTranslator.swift; sourceTree = "<group>"; };
+		A1BE4F3C2541A78200608EDC /* SearchWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWireFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		A1BE4EC6250E683600608EDC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE4F3B2541A6F100608EDC /* WireFrame */,
 				A1BE4F26253D979900608EDC /* SearchViewController.swift */,
 				A1BE4F25253D979900608EDC /* Builder */,
 			);
@@ -298,6 +301,14 @@
 				A1BE4F3925404B8000608EDC /* GithubRepoTranslator.swift */,
 			);
 			path = Translator;
+			sourceTree = "<group>";
+		};
+		A1BE4F3B2541A6F100608EDC /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE4F3C2541A78200608EDC /* SearchWireFrame.swift */,
+			);
+			path = WireFrame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +458,7 @@
 				A1BE4F312540413200608EDC /* GitHubRepoModel.swift in Sources */,
 				A1BE4EA5250CD91300608EDC /* ContentView.swift in Sources */,
 				A1BE4EE5252DC4A200608EDC /* SearchUseCase.swift in Sources */,
+				A1BE4F3D2541A78200608EDC /* SearchWireFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
